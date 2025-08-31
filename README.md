@@ -12,3 +12,13 @@ This is a repository with exercises to understand Python asyncio (Asynchronous I
 
 - Coroutines: Special functions declared with async def that can pause and resume execution.
 - Async/Await: Keywords to define and manage asynchronous operations, making code look synchronous but run asynchronously.
+
+## Exercise 2: Tasks
+
+- Tasks: Special objects that can be used to manage asynchronous operations.
+
+As defined by the official documentation:
+
+> A Future-like object that runs a Python coroutine. Not thread-safe. 
+
+> Tasks are used to run coroutines in event loops. If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future. When the Future is done, the execution of the wrapped coroutine resumes.

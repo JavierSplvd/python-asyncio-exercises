@@ -4,6 +4,8 @@ Coroutines: Special functions declared with async def that can pause and resume 
 Async/Await: Keywords to define and manage asynchronous operations, making code look synchronous but run asynchronously.
 
 We will create two coroutines and run them sequentially, coroutine1 will run first and once finished, coroutine2 will run.
+
+Just invoking a coroutine will not schedule it to run. If you call `main()` without `asyncio.run()` you will get "RuntimeWarning: coroutine 'main' was never awaited"
 """
 
 import asyncio
