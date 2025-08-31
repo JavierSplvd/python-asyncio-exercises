@@ -26,7 +26,16 @@ As defined by the official documentation:
 ## Exercise 3: Streams
 
 - Streams: High-level APIs for TCP, UDP, and SSL networking. Streams allow sending and receiving data without using callbacks or low-level protocols and transports.
+- Gather: Wait for multiple coroutines to complete. This enables you to run multiple coroutines concurrently.
 
 ```python
 reader, writer = await asyncio.open_connection('example.com', 80)
 ```
+
+## Exercise 4: Subprocesses
+
+- Subprocess: Spawning a new process under the control of the event loop.
+
+## Exercise 5: Queues
+
+## Exercise 6: Exceptions
