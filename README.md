@@ -38,4 +38,10 @@ reader, writer = await asyncio.open_connection('example.com', 80)
 
 ## Exercise 5: Queues
 
+- Queues: Asynchronous FIFO queues for producer-consumer patterns.
+
+Asyncio queue objects are not thread-safe, unlike the queues from the queue module. Asyncio queues are designed to be used specifically in async/await code.
+
+There are two additional queue types: PriorityQueue and LifoQueue.
+
 ## Exercise 6: Exceptions
