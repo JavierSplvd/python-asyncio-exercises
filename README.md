@@ -22,3 +22,11 @@ As defined by the official documentation:
 > A Future-like object that runs a Python coroutine. Not thread-safe. 
 
 > Tasks are used to run coroutines in event loops. If a coroutine awaits on a Future, the Task suspends the execution of the coroutine and waits for the completion of the Future. When the Future is done, the execution of the wrapped coroutine resumes.
+
+## Exercise 3: Streams
+
+- Streams: High-level APIs for TCP, UDP, and SSL networking. Streams allow sending and receiving data without using callbacks or low-level protocols and transports.
+
+```python
+reader, writer = await asyncio.open_connection('example.com', 80)
+```
