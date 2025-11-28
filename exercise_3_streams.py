@@ -24,7 +24,7 @@ async def tcp_echo_client(message):
     writer.close()
     await writer.wait_closed()
 
-async def handle_echo(reader, writer):
+async def _handle_echo(reader, writer):
     data = await reader.read(100)
     message = data.decode()
     addr = writer.get_extra_info('peername')
@@ -41,7 +41,7 @@ async def handle_echo(reader, writer):
 
 async def tcp_echo_server():
     server = await asyncio.start_server(
-        handle_echo, '127.0.0.1', 8888)
+        _handle_echo, '127.0.0.1', 8888)
 
     addr = server.sockets[0].getsockname()
     print(f'Serving on {addr}')

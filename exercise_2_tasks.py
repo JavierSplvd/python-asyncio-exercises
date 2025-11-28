@@ -21,4 +21,5 @@ async def main_with_task_group():
 
 if __name__ == "__main__":
     asyncio.run(main())
+    print("---")
     asyncio.run(main_with_task_group())
