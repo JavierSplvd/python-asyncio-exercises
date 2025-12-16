@@ -1,14 +1,23 @@
 import asyncio
 from contextlib import asynccontextmanager
 
-@asynccontextmanager
-async def web_page(url):
-    await asyncio.sleep(1)
-    data = f"Hello world: {url}"
-    yield data
 
-async def main():
-    async with web_page('google.com') as data:
-        print(data)
+class Connection:
+    def __init__(self, host, port):
+        self.host = host
+        self.port = port
 
-asyncio.run(main())
+    async def __aenter__(self):
+        await asyncio.sleep(1)
+        return "Hello world from connection"
+
+    async def __aexit__(self, exc_type, exc, tb):
+        await asyncio.sleep(1)
+
+
+async def connection_example():
+    async with Connection('localhost', 9001) as conn:
+        print(conn)
+        pass
+
+asyncio.run(connection_example())
